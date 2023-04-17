@@ -1,24 +1,2 @@
-<h1>Mi aplicación</h1>
-<h2>{{title + ' ' + title.length }}</h2>
-<div *ngFor="let movie of movies"> <!-- Muestra los datos de las peliculas mediante un bucle for-->
-<app-card-movie [movie]="movie" (showDatamovieList)="onShowDatamovieList($event)"/>
-<!--
-  <app-card-movie> es la declaración del componente card-movie
-
-  [movie] es una variable dentro de card-movie.ts que llama a la variable del bucle for “movie” que busca dentro
-  del array “movies” de app.components.ts para luego mostrar los datos dentro de card-movie.html que es llamado en app.components.html
-
-  (showDatamovieList)="onShowDatamovieList($event) es un evento emitido de card-movie.component.ts que llama al método onShowDatamovieList(datamovies: Datamovie[])
-  en app.componet.ts que pone la variable showDatamovieList = true y toma por parametro los datos de la pelicula que será almacenada en app.components.ts para mostrarlos
--->
-</div>
-<app-datamovie-list *ngIf="showDatamovieList"
-(close)="onCloseDatamovieList()"
-[datamovies]="datamovies"/>
- <!-- <app-datamovie-list> es la declaracion del componente datamovie-list con condicional If según la variable "showDatamovieList" en app.component.ts
-
-      (close)="onCloseDatamovieList()" es un evento emitido de datamovie-list.component.ts que llama al método onCloseDatamovieList() en app.component.ts que pone
-      la variable showDatamovieList = false y deja de mostrar los datos de la pelicula
-
-      [datamovies]="datamovies" es un parametro de entrada que contiene los datos de la pelicula seleccionada
--->
+<h1>Catalogo de películas</h1>
+<router-outlet/> <!-- Muestra la ruta raiz, que en este caso, está vinculada con movie-list-component (se puede observar en app.modules.ts) -->
