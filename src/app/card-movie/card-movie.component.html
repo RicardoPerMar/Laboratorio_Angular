@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card_image"><img [src]="movie.poster"></div>
+  <div (click)="onTitleClick()"> <!-- Si se hace click, llama al método onTitleClick() de card-movie.component.ts que contiene un evento que es emitido -->
+    <div class="card_title title-white">
+      {{movie.name}} <br />
+      {{movie.director}}
+    </div>
+    <div class="card_year title-white">
+      <br>
+      {{movie.year}}
+    </div>
+  </div>
+</div>

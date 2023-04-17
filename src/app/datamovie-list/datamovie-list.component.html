@@ -1,0 +1,15 @@
+<div class="overlay"></div>
+<div class="modal">
+  <button class="modal-close-btn" (click)="onCloseClick()">✖</button> <!-- Si se clicka la X, llama al método onCloseClick() de datamovie-list.component.ts que contiene un evento que se emite -->
+  <h2>Datos de la película</h2>
+  <div class="datamovie-grid-container">
+    <div class="datamovie-grid-header">Titulo</div>
+    <div class="datamovie-grid-header">Director</div>
+    <div class="datamovie-grid-header">Año</div>
+    <ng-container *ngFor="let datamovie of datamovies"> <!-- ng-container permite usar directivas estructurales sin un elemento (div, span, etc) -->
+      <span>{{ datamovie.name }}</span>
+      <span>{{ datamovie.director }}</span>
+      <span>{{ datamovie.year }}</span>
+    </ng-container>
+  </div>
+</div>
