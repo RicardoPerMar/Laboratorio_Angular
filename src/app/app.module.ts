@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { CardMovieComponent } from './card-movie/card-movie.component';
+import { CardMovieComponent } from './pages/movie-list/card-movie/card-movie.component';
 import { DatamovieListComponent } from './datamovie-list/datamovie-list.component';
 import { MovieListComponent } from './pages/movie-list/movie-list.component';
 

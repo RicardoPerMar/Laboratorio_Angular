@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Movie } from '../model/movie.model';
-import { Datamovie } from '../model/datamovie.model';
+import { Movie } from '../../../model/movie.model';
+import { Datamovie } from '../../../model/datamovie.model';
 
 @Component({
   selector: 'app-card-movie',
