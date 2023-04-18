@@ -20,7 +20,4 @@
   border-radius: 40px;
   object-fit: cover;
  }
- .errors > div{
-  color: red;
-  font-size: 80%;
- }
+

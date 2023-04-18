@@ -8,6 +8,7 @@ import { DatamovieListComponent } from './datamovie-list/datamovie-list.componen
 import { MovieListComponent } from './pages/movie-list/movie-list.component';
 import { MovieEditComponent } from './pages/movie-edit/movie-edit.component';
 import { FormsModule } from '@angular/forms';
+import { FieldErrorDisplayComponent } from './common/field-error-display/field-error-display.component';
 
 const appRoutes : Routes = [ // Rutas que tiene mi aplicación
   {path: '', component: MovieListComponent}, // Ruta raiz
@@ -21,7 +22,8 @@ const appRoutes : Routes = [ // Rutas que tiene mi aplicación
     CardMovieComponent,
     DatamovieListComponent,
     MovieListComponent,
-    MovieEditComponent
+    MovieEditComponent,
+    FieldErrorDisplayComponent
   ],
   imports: [
     BrowserModule,
