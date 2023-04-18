@@ -1,0 +1,26 @@
+.card {
+  position: relative;
+  margin: 30px auto;
+  width: 275px;
+  height: 275px;
+  border-radius: 40px;
+  box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0,
+ 0, 0.22);
+  cursor: pointer;
+  transition: 0.4s;
+ }
+ .card .card_image {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+ }
+ .card .card_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  object-fit: cover;
+ }
+ .errors > div{
+  color: red;
+  font-size: 80%;
+ }

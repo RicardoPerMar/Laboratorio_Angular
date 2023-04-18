@@ -1,2 +1,41 @@
-<p>movie-edit works!</p>
-<p>Nombre del juego: {{ name }}</p> <!-- Variable name de movie-edit.component.ts -->
+<div>
+  <h1 style="text-align: center;">MODIFICAR PELICULA</h1>
+  <div>
+    <div class="card">
+      <div class="card_image">
+        <img [src]="poster" />
+      </div>
+    </div>
+    <label for="poster">URL Imagen</label>
+    <input type="text" id="poster" name="poster" [(ngModel)]="movie.poster" placeholder="{{ poster }}" required
+      pattern="https?://.+" #vPoster="ngModel"/>
+      <div *ngIf="vPoster.invalid && (vPoster.dirty || vPoster.touched)" class="errors">
+        <div *ngIf="vPoster.errors?.['required']">URL is required</div>
+        <div *ngIf="vPoster.errors?.['pattern']">URL is not a valud http URL</div>
+      </div>
+  </div>
+  <div>
+    <label for="name">Titulo</label>
+    <input type="text" id="name" name="name" [(ngModel)]="movie.name" placeholder="{{ name }}" required
+      #vName="ngModel" />
+    <div *ngIf="vName.invalid && (vName.dirty || vName.touched)" class="errors">
+      <div *ngIf="vName.errors?.['required']">Name is required</div>
+    </div>
+  </div>
+  <div>
+    <label for="year">Año</label>
+    <input type="number" id="year" name="year" [(ngModel)]="movie.year" placeholder="{{ year }}" required #vYear="ngModel"/>
+    <div *ngIf="vYear.invalid && (vYear.dirty || vYear.touched)" class="errors">
+      <div *ngIf="vYear.errors?.['required']">Year is required</div>
+    </div>
+  </div>
+  <div>
+    <label for="director">Director</label>
+    <input type="text" id="director" name="director" [(ngModel)]="movie.director" placeholder="{{ director }}"
+      required #vDirector="ngModel"/>
+      <div *ngIf="vDirector.invalid && (vDirector.dirty || vDirector.touched)" class="errors">
+        <div *ngIf="vDirector.errors?.['required']">Director is required</div>
+      </div>
+  </div>
+  <button (click)="handleSaveClick()">Save</button>
+</div>

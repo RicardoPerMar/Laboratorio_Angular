@@ -3,14 +3,14 @@
 import { Datamovie } from "./datamovie.model";
 
 export class Movie{
-  id: number;
-  name: string;
+  id?: number;
+  name?: string;
   poster?: string;
-  director: string;
-  year: number;
+  director?: string;
+  year?: string;
   datamovie?: Datamovie[];
 
-  constructor(id: number, name: string, director: string, year: number, poster?: string, datamovie?: Datamovie[]){
+  constructor(id?: number, name?: string, director?: string, year?: string, poster?: string, datamovie?: Datamovie[]){
     this.id = id;
     this.name = name;
     this.poster = poster;

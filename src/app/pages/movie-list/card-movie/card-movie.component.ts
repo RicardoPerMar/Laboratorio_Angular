@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Movie } from '../../../model/movie.model';
-import { Datamovie } from '../../../model/datamovie.model';
+import { Movie } from '@/model/movie.model';
+import { Datamovie } from '@/model/datamovie.model';
 import { Router } from '@angular/router';
 
 @Component({
@@ -19,7 +19,7 @@ export class CardMovieComponent {
   }
 
   handleImageClick(){ //  Cuando se clicke la imagen, navega hacia la ruta /edit
-    this.router.navigate(['/edit', this.movie.name]); // Se le pasa como parametro el nombre de la pelicual que se pulse
+    this.router.navigate(['/edit', this.movie.id, this.movie.poster, this.movie.name, this.movie.year, this.movie.director]); // Se le pasa como parametro el nombre de la pelicula que se pulse
   }
 
 }
