@@ -1,2 +1,7 @@
-<h1>Catalogo de películas</h1>
+<header>
+  <nav>
+    <a routerLink="/">Home</a> <!-- routerLink se enlaza con las rutas creadas en app.modules.ts -->
+    <a routerLink="/edit">Create new Movie</a>
+  </nav>
+</header>
 <router-outlet/> <!-- Muestra la ruta raiz, que en este caso, está vinculada con movie-list-component (se puede observar en app.modules.ts) -->

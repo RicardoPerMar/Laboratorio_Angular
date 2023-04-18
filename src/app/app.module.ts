@@ -6,9 +6,11 @@ import { AppComponent } from './app.component';
 import { CardMovieComponent } from './pages/movie-list/card-movie/card-movie.component';
 import { DatamovieListComponent } from './datamovie-list/datamovie-list.component';
 import { MovieListComponent } from './pages/movie-list/movie-list.component';
+import { MovieEditComponent } from './pages/movie-edit/movie-edit.component';
 
 const appRoutes : Routes = [ // Rutas que tiene mi aplicación
-  {path: '', component: MovieListComponent} // Ruta raiz
+  {path: '', component: MovieListComponent}, // Ruta raiz
+  {path: 'edit/:name', component: MovieEditComponent}, // Ruta edit que recibe el nombre del juego (los parametros se pasan con dos puntos (:name))
 ];
 
 @NgModule({
@@ -16,7 +18,8 @@ const appRoutes : Routes = [ // Rutas que tiene mi aplicación
     AppComponent,
     CardMovieComponent,
     DatamovieListComponent,
-    MovieListComponent
+    MovieListComponent,
+    MovieEditComponent
   ],
   imports: [
     BrowserModule,
