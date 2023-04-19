@@ -21,18 +21,27 @@ export class MovieEditComponent {
     private route: ActivatedRoute,
     private movieApi: MovieApiService
   ) {
-    this.id = Number(this.route.snapshot.paramMap.get('id'))!; // Toma la ruta y coge el parametro 'id' de la ruta si es que hay
-    this.name = this.route.snapshot.paramMap.get('name')!; // Toma la ruta y coge el parametro 'name' de la ruta si es que hay
-    this.poster = this.route.snapshot.paramMap.get('poster')!; // Toma la ruta y coge el parametro 'poster' de la ruta si es que hay
-    this.year = this.route.snapshot.paramMap.get('year')!; // Toma la ruta y coge el parametro 'year' de la ruta si es que hay
-    this.director = this.route.snapshot.paramMap.get('director')!; // Toma la ruta y coge el parametro 'director' de la ruta si es que hay
-    this.movie = new Movie(this.id);
+    this.id = Number(this.route.snapshot.paramMap.get('id'))!;
+    this.name = this.route.snapshot.paramMap.get('name')!;
+    this.poster = this.route.snapshot.paramMap.get('poster')!;
+    this.year = this.route.snapshot.paramMap.get('year')!;
+    this.director = this.route.snapshot.paramMap.get('director')!;
+    this.movie = new Movie();
   }
 
   handleSaveClick(form: NgForm) {
     if (form.valid) {
-      this.movieApi.Edit(this.movie);
-      console.log(this.movie);
+      this.movieApi.Edit(this.movie, this.id).subscribe({
+        next: (movie) => {
+          this.id = movie.id!;
+          alert('Juego actualizado correctamente');
+          console.log(movie);
+        },
+        error: (error) => {
+          alert('Error al actualizar el juego');
+          console.log(error);
+        }
+      });
     }else{
       alert(
         'Formulario inválido. Comprueba si hay errores de validación en alguno de los campos del formulario'

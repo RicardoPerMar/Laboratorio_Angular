@@ -1,20 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Movie } from '../model/movie.model';
 import { movieMockCollection } from './movie-api.mock';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root' // Hace que el servicio movie-api sea global
 })
 export class MovieApiService {
 
-  constructor() { }
+  constructor(private http : HttpClient) { }
 
-  getAll() : Promise<Movie[]>{ // NI IDEA LO QUE HACE PROMISE
-    return Promise.resolve(movieMockCollection);
+  getAll() : Observable<Movie[]>{
+    return  this.http.get<Movie[]>('http://localhost:3001/movies');
   }
 
-  Edit(movie: Movie): Promise<Movie> {
-    movieMockCollection.fill(movie, Number((movie.id!)-1), movie.id);
-    return Promise.resolve(movie);
+  Edit(movie: Movie, id: number): Observable<Movie> {
+    return this.http.put<Movie>('./api/movies/' + id, movie);
   }
 }

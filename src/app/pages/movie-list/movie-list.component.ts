@@ -17,9 +17,12 @@ export class MovieListComponent {
     // Pide el servicio mediante inyección de dependencias, es decir, busca quien está registrado
   }
 
-  loadMovies = async () => {
+  loadMovies = () => {
     // Método asincrono (ejecucion rápida y carga rápida de datos) que llama al método getAll() (contiene las peliculas) del servicio movie-api y los almacena en la variable local "movies"
-    this.movies = await this.movieApiService.getAll();
+    this.movieApiService.getAll().subscribe(
+      (movies) => (this.movies = movies),
+      (error) => alert(error.message),
+    );
   };
 
   ngOnInit(): void {

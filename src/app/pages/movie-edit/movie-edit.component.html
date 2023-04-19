@@ -6,30 +6,30 @@
     </div>
   </div>
   <form #gameForm="ngForm">
-    <div>
-      <label for="poster">URL Imagen</label>
+    <div class="data">
+      <label for="poster">URL Imagen</label> <br>
       <input type="text" id="poster" name="poster" [(ngModel)]="movie.poster" placeholder="{{ poster }}" required
         pattern="https?://.+" #vPoster="ngModel" />
       <app-field-error-display [fieldNgModel]="vPoster"></app-field-error-display>
     </div>
-    <div>
-      <label for="name">Titulo</label>
+    <div class="data">
+      <label for="name">Titulo</label> <br>
       <input type="text" id="name" name="name" [(ngModel)]="movie.name" placeholder="{{ name }}" required
         #vName="ngModel" />
       <app-field-error-display [fieldNgModel]="vName"></app-field-error-display>
     </div>
-    <div>
-      <label for="year">Año</label>
+    <div class="data">
+      <label for="year">Año</label> <br>
       <input type="number" id="year" name="year" [(ngModel)]="movie.year" placeholder="{{ year }}" required
         #vYear="ngModel" />
       <app-field-error-display [fieldNgModel]="vYear"></app-field-error-display>
     </div>
-    <div>
-      <label for="director">Director</label>
+    <div class="data">
+      <label for="director">Director</label> <br>
       <input type="text" id="director" name="director" [(ngModel)]="movie.director" placeholder="{{ director }}"
         required #vDirector="ngModel" />
       <app-field-error-display [fieldNgModel]="vDirector"></app-field-error-display>
     </div>
-    <button (click)="handleSaveClick(gameForm)">Save</button>
+    <button (click)="handleSaveClick(gameForm)" class="button">Update</button>
   </form>
 </div>
