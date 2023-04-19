@@ -1,7 +1,7 @@
 Vamos a crear una aplicación simple que contendrá dos páginas:
 
-Listado de películas
-Visualización detalle de películas
+- Listado de películas
+- Visualización detalle de películas
 
 Pinchando en una película del listado, vamos a navegar a la página de detalle de la película, donde podemos editarla.
 
