@@ -1,4 +1,8 @@
 <div *ngIf="fieldNgModel?.invalid && (fieldNgModel?.dirty || fieldNgModel?.touched)" class="errors">
   <div *ngIf="fieldNgModel?.errors?.['required']">This field is required </div>
   <div *ngIf="fieldNgModel?.errors?.['pattern']">This field is not well formed</div>
+  <div *ngIf="fieldNgModel?.errors?.['minlength']">This field has less than three characters</div>
+  <div *ngIf="fieldNgModel?.errors?.['min']">The year has to higher than 1900</div>
+  <div *ngIf="fieldNgModel?.errors?.['max']">The year has to lower than 2100</div>
+
 </div>

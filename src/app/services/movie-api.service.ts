@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Movie } from '../model/movie.model';
-import { movieMockCollection } from './movie-api.mock';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 

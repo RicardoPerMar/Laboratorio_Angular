@@ -15,19 +15,19 @@
     <div class="data">
       <label for="name">Titulo</label> <br>
       <input type="text" id="name" name="name" [(ngModel)]="movie.name" placeholder="{{ name }}" required
-        #vName="ngModel" />
+        #vName="ngModel" minlength="3"/>
       <app-field-error-display [fieldNgModel]="vName"></app-field-error-display>
     </div>
     <div class="data">
       <label for="year">Año</label> <br>
       <input type="number" id="year" name="year" [(ngModel)]="movie.year" placeholder="{{ year }}" required
-        #vYear="ngModel" />
+        #vYear="ngModel"  min="1899" max="2101"/>
       <app-field-error-display [fieldNgModel]="vYear"></app-field-error-display>
     </div>
     <div class="data">
       <label for="director">Director</label> <br>
       <input type="text" id="director" name="director" [(ngModel)]="movie.director" placeholder="{{ director }}"
-        required #vDirector="ngModel" />
+        required #vDirector="ngModel" minlength="3"/>
       <app-field-error-display [fieldNgModel]="vDirector"></app-field-error-display>
     </div>
     <button (click)="handleSaveClick(gameForm)" class="button">Update</button>
