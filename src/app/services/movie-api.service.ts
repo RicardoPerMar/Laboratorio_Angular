@@ -17,4 +17,8 @@ export class MovieApiService {
   Edit(movie: Movie, id: number): Observable<Movie> {
     return this.http.put<Movie>('./api/movies/' + id, movie);
   }
+
+  getOne(id: number) : Observable<Movie>{
+    return  this.http.get<Movie>('http://localhost:3001/movies/' + id);
+  }
 }

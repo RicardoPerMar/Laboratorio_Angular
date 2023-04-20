@@ -13,7 +13,7 @@ import { FieldErrorDisplayComponent } from './common/field-error-display/field-e
 
 const appRoutes : Routes = [ // Rutas que tiene mi aplicación
   {path: '', component: MovieListComponent}, // Ruta raiz
-  {path: 'edit/:id/:poster/:name/:year/:director', component: MovieEditComponent},
+  {path: 'edit/:id', component: MovieEditComponent},
   {path: 'edit', component: MovieEditComponent},
 ];
 

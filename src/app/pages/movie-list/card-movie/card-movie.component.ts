@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class CardMovieComponent {
   @Input() movie!: Movie; // Parametro de entrada para mostrar la caratula de la pelicula con el título
   @Output() showDatamovieList = new EventEmitter<Datamovie[]>(); // Emision de un evento para mostrar los datos de la película
+  http: any;
 
   constructor(private router: Router){} // E
 
@@ -19,7 +20,6 @@ export class CardMovieComponent {
   }
 
   handleImageClick(){ //  Cuando se clicke la imagen, navega hacia la ruta /edit
-    this.router.navigate(['/edit', this.movie.id, this.movie.poster, this.movie.name, this.movie.year, this.movie.director]); // Se le pasa como parametro el nombre de la pelicula que se pulse
+    this.router.navigate(['/edit', this.movie.id]); // Se le pasa como parametro el nombre de la pelicula que se pulse
   }
-
 }
