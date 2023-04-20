@@ -26,7 +26,7 @@ export class MovieEditComponent {
     this.poster = this.route.snapshot.paramMap.get('poster')!;
     this.year = this.route.snapshot.paramMap.get('year')!;
     this.director = this.route.snapshot.paramMap.get('director')!;
-    this.movie = new Movie();
+    this.movie = new Movie(this.id, this.name, this.poster,this.year, this.director);
   }
 
   handleSaveClick(form: NgForm) {
