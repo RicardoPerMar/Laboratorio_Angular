@@ -1,0 +1,35 @@
+<div>
+  <h1 style="text-align: center;">CREAR PELICULA</h1>
+  <div class="card">
+    <div class="card_image">
+      <img [src]="movie.poster" />
+    </div>
+  </div>
+  <form #gameForm="ngForm">
+    <div class="data">
+      <label for="poster">URL Imagen</label> <br>
+      <input type="text" id="poster" name="poster" [(ngModel)]="movie.poster" required
+        pattern="https?://.+" #vPoster="ngModel" />
+      <app-field-error-display [fieldNgModel]="vPoster"></app-field-error-display>
+    </div>
+    <div class="data">
+      <label for="name">Titulo</label> <br>
+      <input type="text" id="name" name="name" [(ngModel)]="movie.name"  required
+        #vName="ngModel" minlength="3"/>
+      <app-field-error-display [fieldNgModel]="vName"></app-field-error-display>
+    </div>
+    <div class="data">
+      <label for="year">Año</label> <br>
+      <input type="number" id="year" name="year" [(ngModel)]="movie.year"  required
+        #vYear="ngModel"  min="1899" max="2101"/>
+      <app-field-error-display [fieldNgModel]="vYear"></app-field-error-display>
+    </div>
+    <div class="data">
+      <label for="director">Director</label> <br>
+      <input type="text" id="director" name="director" [(ngModel)]="movie.director"
+        required #vDirector="ngModel" minlength="3"/>
+      <app-field-error-display [fieldNgModel]="vDirector"></app-field-error-display>
+    </div>
+    <button (click)="handleSaveClick(gameForm)" class="button">Create</button>
+  </form>
+</div>

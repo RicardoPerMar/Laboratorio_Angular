@@ -11,14 +11,18 @@ export class MovieApiService {
   constructor(private http : HttpClient) { }
 
   getAll() : Observable<Movie[]>{
-    return  this.http.get<Movie[]>('http://localhost:3001/movies');
+    return  this.http.get<Movie[]>('./api/movies');
   }
 
   Edit(movie: Movie, id: number): Observable<Movie> {
     return this.http.put<Movie>('./api/movies/' + id, movie);
   }
 
+  Insert(movie: Movie) : Observable<Movie> {
+    return this.http.post<Movie>('./api/movies', movie);
+  }
+
   getOne(id: number) : Observable<Movie>{
-    return  this.http.get<Movie>('http://localhost:3001/movies/' + id);
+    return  this.http.get<Movie>('./api/movies/' + id);
   }
 }

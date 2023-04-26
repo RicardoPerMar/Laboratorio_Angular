@@ -10,11 +10,13 @@ import { MovieListComponent } from './pages/movie-list/movie-list.component';
 import { MovieEditComponent } from './pages/movie-edit/movie-edit.component';
 import { FormsModule } from '@angular/forms';
 import { FieldErrorDisplayComponent } from './common/field-error-display/field-error-display.component';
+import { MovieCreateComponent } from './pages/movie-create/movie-create.component';
 
 const appRoutes : Routes = [ // Rutas que tiene mi aplicación
   {path: '', component: MovieListComponent}, // Ruta raiz
   {path: 'edit/:id', component: MovieEditComponent},
   {path: 'edit', component: MovieEditComponent},
+  {path: 'create', component: MovieCreateComponent},
 ];
 
 @NgModule({
@@ -24,7 +26,8 @@ const appRoutes : Routes = [ // Rutas que tiene mi aplicación
     DatamovieListComponent,
     MovieListComponent,
     MovieEditComponent,
-    FieldErrorDisplayComponent
+    FieldErrorDisplayComponent,
+    MovieCreateComponent,
   ],
   imports: [
     BrowserModule,

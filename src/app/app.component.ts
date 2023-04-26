@@ -7,7 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'], // Ruta del fichero de estilos
 })
 export class AppComponent {
-  title = 'movie-catalog';
-
   constructor(){}
 }

@@ -12,21 +12,12 @@ import { NgForm } from '@angular/forms';
 export class MovieEditComponent {
   id: number;
   movie!: Movie;
-  /*name: string;
-  poster?: string;
-  year: string;
-  director: string;*/
 
   constructor(
     private route: ActivatedRoute,
     private movieApiService: MovieApiService
   ) {
-    /*this.id = Number(this.route.snapshot.paramMap.get('id'))!;
-    this.name = this.route.snapshot.paramMap.get('name')!;
-    this.poster = this.route.snapshot.paramMap.get('poster')!;
-    this.year = this.route.snapshot.paramMap.get('year')!;
-    this.director = this.route.snapshot.paramMap.get('director')!;
-    this.movie = new Movie(this.id, this.name, this.poster,this.year, this.director);*/
+
     this.id = 0;
     this.movie = new Movie();
     this.id = Number(this.route.snapshot.paramMap.get('id'))!
