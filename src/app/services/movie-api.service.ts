@@ -22,6 +22,10 @@ export class MovieApiService {
     return this.http.post<Movie>('./api/movies', movie);
   }
 
+  Delete(id: number){
+    return this.http.delete('./api/movies/' + id);
+  }
+
   getOne(id: number) : Observable<Movie>{
     return  this.http.get<Movie>('./api/movies/' + id);
   }

@@ -1,7 +1,9 @@
 <div class="card">
   <div class="card_image">
     <img [src]="movie.poster" (click)="handleImageClick()"> <!-- Si se le hace click, se llama al método handleImageClick() de card-movie.component.ts -->
+
   </div>
+
   <div (click)="onTitleClick()"> <!-- Si se hace click, llama al método onTitleClick() de card-movie.component.ts que contiene un evento que es emitido -->
     <div class="card_title title-white">
       {{movie.name}} <br />
@@ -11,5 +13,8 @@
       <br>
       {{movie.year}}
     </div>
+
   </div>
+
 </div>
+<button class="button" (click)="deleteMovie()">Delete</button>
